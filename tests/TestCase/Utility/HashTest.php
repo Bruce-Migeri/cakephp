@@ -1508,6 +1508,9 @@ class HashTest extends TestCase
         $result = Hash::extract($data, 'root.created');
         $this->assertSame([$data['root']['created']], $result);
 
+        $result = Hash::extract($data, 'root.array');
+        $this->assertSame($data['root']['array'], $result);
+
         $result = Hash::extract($data, 'root.array.foo');
         $this->assertSame(['bar'], $result);
     }
