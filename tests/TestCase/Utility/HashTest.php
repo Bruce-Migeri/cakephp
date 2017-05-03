@@ -1490,7 +1490,7 @@ class HashTest extends TestCase
     }
 
     /**
-     * Test that uneven keys are handled correctly.
+     * Tests that objects as values handled correctly.
      *
      * @return void
      */
