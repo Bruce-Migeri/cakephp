@@ -135,7 +135,12 @@ class Hash
 
         // Simple paths.
         if (!preg_match('/[{\[]/', $path)) {
-            return (array)static::get($data, $path);
+            $data = static::get($data, $path);
+            if (!(is_array($data) || is_object($data))) {
+                return (array)$data;
+            }
+
+            return $data;
         }
 
         if (strpos($path, '[') === false) {
